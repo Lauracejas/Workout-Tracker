@@ -12,7 +12,7 @@ router.post("/api/workouts", ({ body }, res) => {
       });
   });
   
-  router.put("/api/workouts/:id", ({ params, body }, res) => {
+  router.put("/api/workouts/:id", ({ body, params }, res) => {
     Workout.findOneAndUpdate(
     { _id: params.id },
     { $push: { exercises: body } },
